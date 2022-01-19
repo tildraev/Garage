@@ -12,6 +12,9 @@
 		D2997FAB2798AD2D008DBCD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2997FA92798AD2D008DBCD0 /* Main.storyboard */; };
 		D2997FAD2798AD2F008DBCD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2997FAC2798AD2F008DBCD0 /* Assets.xcassets */; };
 		D2997FB02798AD2F008DBCD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2997FAE2798AD2F008DBCD0 /* LaunchScreen.storyboard */; };
+		D2997FBF2798B1AB008DBCD0 /* GarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FBE2798B1AB008DBCD0 /* GarageTableViewController.swift */; };
+		D2997FC12798B4C3008DBCD0 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC02798B4C3008DBCD0 /* VehicleType.swift */; };
+		D2997FC32798B62F008DBCD0 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC22798B62F008DBCD0 /* CarDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D2997FAC2798AD2F008DBCD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2997FAF2798AD2F008DBCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2997FB12798AD2F008DBCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2997FBE2798B1AB008DBCD0 /* GarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewController.swift; sourceTree = "<group>"; };
+		D2997FC02798B4C3008DBCD0 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
+		D2997FC22798B62F008DBCD0 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,6 @@
 				D2997FBA2798AD55008DBCD0 /* Views */,
 				D2997FBB2798AD58008DBCD0 /* Controllers */,
 				D2997FB72798AD3E008DBCD0 /* Resources */,
-				D2997FA92798AD2D008DBCD0 /* Main.storyboard */,
 			);
 			path = Garage;
 			sourceTree = "<group>";
@@ -78,6 +83,7 @@
 		D2997FB82798AD49008DBCD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2997FC02798B4C3008DBCD0 /* VehicleType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +91,7 @@
 		D2997FBA2798AD55008DBCD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2997FA92798AD2D008DBCD0 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,8 +99,26 @@
 		D2997FBB2798AD58008DBCD0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2997FBC2798B01E008DBCD0 /* Model Controllers */,
+				D2997FBD2798B023008DBCD0 /* View Controllers */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2997FBC2798B01E008DBCD0 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D2997FBD2798B023008DBCD0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2997FBE2798B1AB008DBCD0 /* GarageTableViewController.swift */,
+				D2997FC22798B62F008DBCD0 /* CarDetailViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2997FBF2798B1AB008DBCD0 /* GarageTableViewController.swift in Sources */,
 				D2997FA42798AD2D008DBCD0 /* AppDelegate.swift in Sources */,
+				D2997FC12798B4C3008DBCD0 /* VehicleType.swift in Sources */,
 				D2997FA62798AD2D008DBCD0 /* SceneDelegate.swift in Sources */,
+				D2997FC32798B62F008DBCD0 /* CarDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
