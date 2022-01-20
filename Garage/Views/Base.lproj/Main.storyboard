@@ -135,8 +135,9 @@
                                     <action selector="imageButtonTapped:" destination="Ksg-WT-Ge6" eventType="touchUpInside" id="Zrm-SC-b4l"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truckPic" translatesAutoresizingMaskIntoConstraints="NO" id="De1-QI-NeD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="De1-QI-NeD">
                                 <rect key="frame" x="57" y="511" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="TxV-fz-2i2"/>
                                     <constraint firstAttribute="width" secondItem="De1-QI-NeD" secondAttribute="height" multiplier="1:1" id="fcd-OL-YnD"/>
@@ -200,12 +201,14 @@
         <segue reference="6sT-Bn-sYq"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="truckPic" width="78" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -42,13 +42,9 @@ class CarDetailViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func imageButtonTapped(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            print("Button capture")
-            
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
-            
             imagePicker.allowsEditing = false
-            
             present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -124,6 +120,7 @@ class CarDetailViewController: UIViewController, UINavigationControllerDelegate,
         modelTextField.text = ""
         yearTextField.text = ""
         carTypePicker.selectRow(0, inComponent: 0, animated: true)
+        imageView.image = defaultImage
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
