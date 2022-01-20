@@ -38,7 +38,28 @@ class GarageTableViewController: UITableViewController {
         // Configure the cell...
         let car = CarController.sharedInstance.garage[indexPath.row]
         cell.textLabel?.text = "\(car.year) \(car.make) \(car.model)"
-
+        let fullString = NSMutableAttributedString("Type: ")
+        let carTypeImage = NSTextAttachment()
+        
+        var carTypeString = ""
+        
+        switch car.defaultImage {
+            
+        case .none:
+            carTypeString = "none"
+        case .sedan:
+            carTypeString = "sedanPic"
+        case .truck:
+            carTypeString = "truckPic"
+        case .coupe:
+            carTypeString = "coupePic"
+        }
+        
+        carTypeImage.image = UIImage(named: carTypeString)
+        let imageString = NSAttributedString(attachment: carTypeImage)
+        fullString.append(imageString)
+        cell.detailTextLabel?.attributedText = fullString
+        
         return cell
     }
 

@@ -12,6 +12,4 @@ enum VehicleType {
     case sedan
     case truck
     case coupe
-    case wagon
-    case hatchback
 }
