@@ -8,8 +8,10 @@
 import Foundation
 
 enum VehicleType {
+    case none
     case sedan
     case truck
     case coupe
     case wagon
+    case hatchback
 }

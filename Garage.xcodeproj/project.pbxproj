@@ -15,6 +15,8 @@
 		D2997FBF2798B1AB008DBCD0 /* GarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FBE2798B1AB008DBCD0 /* GarageTableViewController.swift */; };
 		D2997FC12798B4C3008DBCD0 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC02798B4C3008DBCD0 /* VehicleType.swift */; };
 		D2997FC32798B62F008DBCD0 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC22798B62F008DBCD0 /* CarDetailViewController.swift */; };
+		D2997FC52798B835008DBCD0 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC42798B835008DBCD0 /* Car.swift */; };
+		D2997FC72798B99F008DBCD0 /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2997FC62798B99F008DBCD0 /* CarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		D2997FBE2798B1AB008DBCD0 /* GarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewController.swift; sourceTree = "<group>"; };
 		D2997FC02798B4C3008DBCD0 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 		D2997FC22798B62F008DBCD0 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		D2997FC42798B835008DBCD0 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D2997FC62798B99F008DBCD0 /* CarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D2997FC02798B4C3008DBCD0 /* VehicleType.swift */,
+				D2997FC42798B835008DBCD0 /* Car.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		D2997FBC2798B01E008DBCD0 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2997FC62798B99F008DBCD0 /* CarController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -194,8 +200,10 @@
 			files = (
 				D2997FBF2798B1AB008DBCD0 /* GarageTableViewController.swift in Sources */,
 				D2997FA42798AD2D008DBCD0 /* AppDelegate.swift in Sources */,
+				D2997FC52798B835008DBCD0 /* Car.swift in Sources */,
 				D2997FC12798B4C3008DBCD0 /* VehicleType.swift in Sources */,
 				D2997FA62798AD2D008DBCD0 /* SceneDelegate.swift in Sources */,
+				D2997FC72798B99F008DBCD0 /* CarController.swift in Sources */,
 				D2997FC32798B62F008DBCD0 /* CarDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
