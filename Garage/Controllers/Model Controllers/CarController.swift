@@ -6,22 +6,24 @@
 //
 
 import Foundation
+import UIKit
 
 class CarController {
     static var sharedInstance = CarController()
     var garage = [Car]()
     
     // MARK: - CRUD Functions
-    func createCar(make: String, model: String, year: Int, defaultImage: VehicleType) {
-        let car = Car(make: make, model: model, year: year, defaultImage: defaultImage)
+    func createCar(make: String, model: String, year: Int, vehicleType: VehicleType, vehicleImage: UIImage) {
+        let car = Car(make: make, model: model, year: year, vehicleType: vehicleType, vehicleImage: vehicleImage)
         garage.append(car)
     }
     
-    func updateCar(car: Car, make: String, model: String, year: Int, defaultImage: VehicleType) {
+    func updateCar(car: Car, make: String, model: String, year: Int, vehicleType: VehicleType, vehicleImage: UIImage) {
         car.make = make
         car.model = model
         car.year = year
-        car.defaultImage = defaultImage
+        car.vehicleType = vehicleType
+        car.vehicleImage = vehicleImage
     }
     
     func deleteCar(car: Car) {

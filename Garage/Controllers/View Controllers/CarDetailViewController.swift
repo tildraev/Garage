@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CarDetailViewController: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate{
     
     
     //We may or may not have a car object to work on
@@ -17,6 +17,13 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var carTypePicker: UIPickerView!
+    @IBOutlet weak var imageView: UIImageView!
+    var defaultImage = UIImage()
+    var imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var chooseImageButton: UIButton!
+    
+    
     var pickerData = [String]()
     
     override func viewDidLoad() {
@@ -31,6 +38,29 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         
         guard let car = car else {return}
         updateUI(car: car)
+    }
+    
+    @IBAction func imageButtonTapped(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true, completion: { () -> Void in
+        })
+        imageView.image = info[.originalImage] as? UIImage
+        car?.vehicleImage = info[.originalImage] as? UIImage
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -55,7 +85,8 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         guard let make = makeTextField.text, !make.isEmpty,
               let model = modelTextField.text, !model.isEmpty,
               let yearString = yearTextField.text, !yearString.isEmpty,
-              let year = Int(yearString)
+              let year = Int(yearString),
+              let tempImage = imageView.image
         else {return}
         
         //the car exists, we're updating it
@@ -63,26 +94,26 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             var carType = VehicleType.none
             switch carTypePicker.selectedRow(inComponent: 0) {
-                case 0: carType = .none
-                case 1: carType = .sedan
-                case 2: carType = .truck
-                case 3: carType = .coupe
-                default: carType = .none
+            case 0: carType = .none
+            case 1: carType = .sedan
+            case 2: carType = .truck
+            case 3: carType = .coupe
+            default: carType = .none
             }
             
-            CarController.sharedInstance.updateCar(car: car, make: make, model: model, year: year, defaultImage: carType)
+            CarController.sharedInstance.updateCar(car: car, make: make, model: model, year: year, vehicleType: carType, vehicleImage: tempImage)
         }
         // the car doesn't exist, let's make a new one with the details
         else {
             var carType = VehicleType.none
             switch carTypePicker.selectedRow(inComponent: 0) {
-                case 0: carType = .none
-                case 1: carType = .sedan
-                case 2: carType = .truck
-                case 3: carType = .coupe
-                default: carType = .none
+            case 0: carType = .none
+            case 1: carType = .sedan
+            case 2: carType = .truck
+            case 3: carType = .coupe
+            default: carType = .none
             }
-            CarController.sharedInstance.createCar(make: make, model: model, year: year, defaultImage: carType)
+            CarController.sharedInstance.createCar(make: make, model: model, year: year, vehicleType: carType, vehicleImage: tempImage)
         }
         
         self.navigationController?.popViewController(animated: true)
@@ -92,6 +123,7 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         makeTextField.text = ""
         modelTextField.text = ""
         yearTextField.text = ""
+        carTypePicker.selectRow(0, inComponent: 0, animated: true)
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
@@ -106,7 +138,7 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         modelTextField.text = car.model
         yearTextField.text = "\(car.year)"
         var type = 0
-        switch car.defaultImage {
+        switch car.vehicleType {
         case .none:
             type = 0
         case .sedan:
@@ -117,16 +149,7 @@ class CarDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             type = 3
         }
         carTypePicker.selectRow(type, inComponent: 0, animated: true)
+        imageView.image = car.vehicleImage
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+
 }

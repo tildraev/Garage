@@ -43,7 +43,7 @@ class GarageTableViewController: UITableViewController {
         
         var carTypeString = ""
         
-        switch car.defaultImage {
+        switch car.vehicleType {
             
         case .none:
             carTypeString = "none"
